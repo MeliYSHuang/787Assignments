@@ -37,7 +37,6 @@
             for (var i = 0; i < trimText.length; i++) {
                 if (trimText[i].length > 0 && trimText[i] != " ") {
                     entries.push(trimText[i]);
-                    console.log("|" + trimText[i] + "|");
                 }
             }
 
