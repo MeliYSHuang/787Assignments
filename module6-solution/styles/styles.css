@@ -1,0 +1,9 @@
+.text-success {
+    border-style: solid;
+    border-color: green;
+}
+
+.text-danger {
+    border-style: solid;
+    border-color: red;
+}
