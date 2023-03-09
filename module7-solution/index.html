@@ -52,7 +52,7 @@
      <h2>Already Bought:</h2>
      <ul>
       <li ng-repeat="item in alreadyBought.items">
-        Bought {{ item.quantity }} of {{ item.name }} for {{ alreadyBought.getTotalPrice($index) | trippleDollar }}
+        Bought {{ item.quantity }} of {{ item.name }} for total price of {{ alreadyBought.getTotalPrice($index) | trippleDollar }}
       </li>
        
      </ul>
