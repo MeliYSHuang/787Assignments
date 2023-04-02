@@ -1,0 +1,13 @@
+<div class="col-md-12 col-sm-12 col-xs-12">
+    <ul>
+        <li ng-repeat="item in list.foundItems">
+            <p> <strong>({{ item.short_name }})</strong> 
+                <strong>{{ item.name }}: </strong>
+                <em>{{item.description}} </em>
+                <button ng-click="list.onRemove({index: $index});">Don't want this one!</button>
+            </p>
+        
+      </li>
+    </ul>
+    <div class="error" ng-if="list.validList()">Nothing found.</div>
+</div>
