@@ -8,7 +8,7 @@
   
   function ItemsController ($stateParams, itemsObject) {
     var itemsController = this;
-
+    
     //get selected category name
     itemsController.categoryName = itemsObject.category.name;
     
