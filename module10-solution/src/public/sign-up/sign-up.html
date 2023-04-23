@@ -1,0 +1,58 @@
+<div class="container">
+    <fieldset>
+        <legend><h2>Newsletter Sign-Up</h2></legend>
+        <form name="signUpForm" novalidate>
+            <label>First Name: </label>
+            <input type="text" name="firstname" placeholder="First Name"
+                ng-model="signUpCtrl.user.firstname"
+                required>
+            <span class="error" ng-if="signUpForm.firstname.$invalid && signUpForm.firstname.$touched">
+                Please enter your first name!
+            </span>
+            <br>
+
+            <label>Last Name: </label>
+            <input type="text" name="lastname" placeholder="Last Name"
+                ng-model="signUpCtrl.user.lastname"
+                required>
+            <span class="error" ng-if="signUpForm.lastname.$invalid && signUpForm.lastname.$touched">
+                Please enter your last name!
+            </span>
+            <br>
+          
+            <label>Email: </label>
+            <input type="email" name="email" placeholder="Your Email Address"
+                ng-model="signUpCtrl.user.email"
+                required>
+            <span class="error" ng-if="signUpForm.email.$invalid && signUpForm.email.$touched">
+                Please enter a valid email address: handle@domain format
+            </span>
+            <br>
+
+            <label>Phone: </label>
+            <input type="text" name="phone" placeholder="Phone ###-###-####"
+                ng-model="signUpCtrl.user.phone"
+                required
+                pattern="(\d{3})-(\d{3})-(\d{4})">
+            <span class="error" ng-if="signUpForm.phone.$invalid && signUpForm.phone.$touched">
+                Please enter a valid phone number. Phone must be in the format ###-###-####.
+            </span>
+            <br>
+            
+            <label>Favorite Menu Number: </label>
+            <input type="text" name="favMenuNum" placeholder="Menu Short Name"
+                ng-model="signUpCtrl.user.favMenuNum"  ng-blur="signUpCtrl.checkShortname(signUpForm.favMenuNum, signUpForm)" required>
+            <span ng-show="signUpForm.favMenuNum.$invalid && signUpForm.favMenuNum.$touched">No such menu number exists.</span>
+            <br>
+
+            <button
+                ng-disabled="signUpForm.$invalid || (!signUpCtrl.found && signUpCtrl.searched)"
+                ng-click="signUpCtrl.submit()">Submit</button>
+    </form>
+</fieldset>
+
+<div ng-show="signUpCtrl.saved">
+    Your information has been saved!
+</div>
+
+</div>
